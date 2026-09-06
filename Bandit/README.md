@@ -20,6 +20,7 @@
 | Level 14 -> level 15 | bandit15 | pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7 |
 | Level 15 -> level 16 | bandit16 | kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V |
 | Level 16 -> level 17 | bandit17 | Use the ssh key |
+| Level 17 -> level 18 | bandit18 | OQxXZjELndr90zuhOTDYBEomI0SZITXI |
 
 # Level 1 -> level 2
 
