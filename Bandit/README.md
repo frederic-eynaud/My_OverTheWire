@@ -18,7 +18,7 @@
 | Level 12 -> level 13 | bandit13 | qQYQiHOBPR8zR61qxYqX45quvihF2uzk |
 | Level 13 -> level 14 | bandit14 | aaWecNkG4FhxJQxz07uiwzVP6bJiYS65 |
 | Level 14 -> level 15 | bandit15 | pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7 |
-| Level 15 -> level 16 | bandit15 |  |
+| Level 15 -> level 16 | bandit16 | kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V |
 
 # Level 1 -> level 2
 
@@ -36,3 +36,11 @@ Rotate letters by 13 positions
 
 ## Solution
 <code>cat data.txt | tr 'A-Za-z' 'N-Zn-zA-Ma-m'</code>
+
+# Level 15 -> 16
+
+## Problem
+Use SSL/TLS encryption
+
+## Solution
+<code>openssl s_client -connect localhost:30001</code>
