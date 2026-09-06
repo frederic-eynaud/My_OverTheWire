@@ -23,6 +23,7 @@
 | Level 17 -> level 18 | bandit18 | OQxXZjELndr90zuhOTDYBEomI0SZITXI |
 | Level 18 -> level 19 | bandit19 | KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI |
 | Level 19 -> level 20 | bandi20 | 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA |
+| Level 20 -> level 21 | bandi21 | bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY |
 
 # Level 1 -> level 2
 
@@ -50,9 +51,25 @@ Use SSL/TLS encryption
 <code>openssl s_client -connect localhost:30001</code>
 
 # Level 16 -> level 17
-
 ## Problem
 Recover the ssh key for next level
 
 ## Solution
 <code>openssl s_client -connect localhost:31790 -ign_eof</code>
+
+# Level 20 -> level 21
+
+## Problem
+Connection to localhost on a specified port then read the old password of text from the connection to get the new password.
+
+## Solution
+1. Open netcat on port 1234
+2. Run <code>suconnect</code> on port 1234
+3. Type the password on the netcat console
+
+**Alternative**
+1. Open netcat on port 1234 with the password pushed on it
+```bash
+echo -n "<PASSWORD>" | nc -lp 1234 &</code>
+```
+2. Run <code>suconnect</code> on port 1234
