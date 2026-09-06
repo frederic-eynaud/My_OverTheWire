@@ -19,6 +19,7 @@
 | Level 13 -> level 14 | bandit14 | aaWecNkG4FhxJQxz07uiwzVP6bJiYS65 |
 | Level 14 -> level 15 | bandit15 | pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7 |
 | Level 15 -> level 16 | bandit16 | kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V |
+| Level 16 -> level 17 | bandit17 | Use the ssh key |
 
 # Level 1 -> level 2
 
@@ -44,3 +45,11 @@ Use SSL/TLS encryption
 
 ## Solution
 <code>openssl s_client -connect localhost:30001</code>
+
+# Level 16 -> level 17
+
+## Problem
+Recover the ssh key for next level
+
+## Solution
+<code>openssl s_client -connect localhost:31790 -ign_eof</code>
