@@ -24,6 +24,7 @@
 | Level 18 -> level 19 | bandit19 | KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI |
 | Level 19 -> level 20 | bandi20 | 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA |
 | Level 20 -> level 21 | bandi21 | bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY |
+| Level 21 -> level 22 | bandi22 | RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz |
 
 # Level 1 -> level 2
 
