@@ -25,6 +25,7 @@
 | Level 19 -> level 20 | bandit20 | 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA |
 | Level 20 -> level 21 | bandit21 | bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY |
 | Level 21 -> level 22 | bandit22 | RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz |
+| Level 22 -> level 23 | bandit23 | gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw |
 
 # Level 1 -> level 2
 
