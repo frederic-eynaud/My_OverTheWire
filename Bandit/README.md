@@ -75,3 +75,9 @@ Connection to localhost on a specified port then read the old password of text f
 echo -n "<PASSWORD>" | nc -lp 1234 &</code>
 ```
 2. Run <code>suconnect</code> on port 1234
+
+# Level 22 -> Level 24
+
+## Problem
+
+## Solution
