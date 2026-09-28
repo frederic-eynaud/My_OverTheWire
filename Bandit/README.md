@@ -27,6 +27,7 @@
 | Level 21 -> level 22 | bandit22 | RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz |
 | Level 22 -> level 23 | bandit23 | gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw |
 | Level 23 -> level 24 | bandit24 | hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv |
+| Level 24 -> level 25 | bandit25 | SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P |
 
 # Level 1 -> level 2
 
@@ -126,3 +127,23 @@ Create a script and run it using a weakness in a cron set up by another user
     ```bash
     tail -f /tmp/tmp.xxxxxxxxxx/password
     ```
+
+# Level 24 -> Level 25
+
+## Problem
+> A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+You do not need to create new connections each time
+
+## Solution
+1. List all possible 4-digit codes in a file
+   ```bash
+   for i in {0..9999}; do printf 'hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv %04i\n' "$i" >> possibilities.txt; done
+   ```
+3. Feed the list to the daemon
+   ```bash
+   cat possibilities.txt | nc localhost 30002 > result.txt &
+   ```
+5. Inspect the output file
+   ```bash
+   tail result.txt
+   ```
