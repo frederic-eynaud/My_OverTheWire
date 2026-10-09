@@ -28,6 +28,7 @@
 | Level 22 -> level 23 | bandit23 | gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw |
 | Level 23 -> level 24 | bandit24 | hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv |
 | Level 24 -> level 25 | bandit25 | SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P |
+| Level 25 -> Level 26 | bandit26 | jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ |
 
 # Level 1 -> level 2
 
@@ -147,3 +148,19 @@ You do not need to create new connections each time
    ```bash
    tail result.txt
    ```
+
+# Level 25 -> Level 26
+
+## Problem
+Find out how the user shell works and how to trick <code>more</code> to open a shell
+
+## Solution
+1. Shrink the window as small as possible to get the possibility to open VI inside of ```more``` command
+2. Two solutions get the password from inside <code>vi</code>
+   1. Open a shell
+      ```bash
+      :set shell=/bin/bash
+      :shell
+      ```
+      then display the password file
+   3. Open the password inside <code>vi</code>
